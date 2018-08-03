@@ -54,13 +54,13 @@ if(isset($_POST['buscar']))
     <main class="app-content">
       <div class="app-title">
         <div>
-          <h1><i class="fa fa-credit-card"></i> Beneficios</h1>
+          <h1 style="color:#ef2e24"><i class="fa fa-credit-card"></i> Beneficios</h1>
           <p></p>
         </div>
       </div>
       <div class="buscador-general" style="padding-left: 40px;">
         <h2 class="title">
-                <span class="text">Encontrá beneficios exclusivos para vos</span>&nbsp;
+                <span class="text" style="color:#ef2e24">Encontrá beneficios exclusivos para vos</span>&nbsp;
                 <span class="icon"></span>
         </h2>
           <form method="post">
@@ -73,13 +73,17 @@ if(isset($_POST['buscar']))
                 </div>
                 <div class="form-group col-md-3">
                 <select class="form-control" id="selectCategoria" name="categoria"  placeholder="Categoría"style="padding-top: 7.5px !important;">
-                            <option value="1">GASTRONOMÍA</option>
+                            <option value="1">IDIOMAS</option>
 
-                            <option value="2">ENTRETENIMIENTO</option>
+                            <option value="2">FORMACIÓN</option>
 
-                            <option value="3">TURISMO</option>
+                            <option value="3">ELECTRÓNICA</option>
 
-                            <option value="4">MODA</option>
+                            <option value="4">ENTRETENIMIENTO</option>
+                            
+                            <option value="5">INDUMENTARIA</option>
+                            
+                            <option value="6">SEGUROS</option>
                 </select>
                 </div>
                 <div class="form-group col-md-1" style="width: 97.5px !important; float: right;">
@@ -104,9 +108,9 @@ if(isset($_POST['buscar']))
                           <p class="tx-20 tx-uppercase tx-mont tx-semibold tx-info"><?php echo $item->fields["title"]-> values ?></p>
                           <h5 class="tx-normal tx-roboto lh-3 mg-b-15"><a href="" class="tx-inverse hover-info"> Descuento: <?php echo $item->fields["descuento-3"]-> values ?> </a></h5>
                           <p class="tx-14 tx-gray-600 mg-b-25"> <?php echo $item->fields["descripcion"] == null ? "" : $item->fields["descripcion"] -> values ?> </p>
-                          <p class="tx-10 tx-gray-600 mg-b-25"> Vigente desde el <?php echo $item->fields["vigencia"]-> values["start"] == null ? "" : $item->fields["vigencia"]-> values["start"] -> format('Y/m/d') ?> hasta el <?php echo $item->fields["vigencia"]-> values["end"] == null ? "" : $item->fields["vigencia"]-> values["end"] -> format('Y/m/d') ?> <span class="pipe">|</span> <a href="">Bases</a> </p>
+                          <p class="tx-10 tx-gray-600 mg-b-25"> Vigente desde el <?php echo $item->fields["vigencia"]-> values["start"] == null ? "" : $item->fields["vigencia"]-> values["start"] -> format('Y/m/d') ?> hasta el <?php echo $item->fields["vigencia"]-> values["end"] == null ? "" : $item->fields["vigencia"]-> values["end"] -> format('Y/m/d') ?> </p> <!---Item href "Bases" removida--->
                           <p class="tx-15 mg-b-5">
-                            <button class="btn btn-primary" ><i class="fa fa-fw fa-lg fa-exchange"></i>Canjear</button> 
+                            <button class="btn btn-primary" ><i class="fa fa-fw fa-lg fa-exchange"></i>Imprimir</button> 
                           </p>
                         </div><!-- card-body -->
                       </div><!-- card -->

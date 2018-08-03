@@ -78,6 +78,7 @@
 @import url("https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700");
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Libre+Barcode+39+Extended+Text");
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,700");
 /* ------------------------------------------------------ */
 /* ############### 2. BOOTSTRAP FRAMEWORK ############### */
 /* ------------------------------------------------------ */
@@ -181,11 +182,11 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Fira Sans", "Helvetica Neue", Verdana, sans-serif;
   font-size: 0.875rem;
   font-weight: normal;
   line-height: 1.5;
-  color: #868ba1;
+  color: #868ba1; 
   background-color: #E9ECEF;
 }
 
@@ -4394,7 +4395,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Fira Sans", "Helvetica Neue", Verdana, sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1.5;
@@ -4493,7 +4494,7 @@ button.close {
   display: block;
   max-width: 276px;
   padding: 1px;
-  font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Fira Sans", "Helvetica Neue", Verdana, sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1.5;
@@ -12448,7 +12449,7 @@ textarea.parsley-error:active {
   align-items: center;
 }
 .widget-1 .card-body span:last-child {
-  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Quicksand", "Helvetica Neue", Verdana, sans-serif;
   font-weight: 700;
   color: #343a40;
   font-size: 24px;
@@ -12460,7 +12461,7 @@ textarea.parsley-error:active {
   justify-content: space-between;
 }
 .widget-1 .card-footer h6 {
-  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Quicksand", "Helvetica Neue", Verdana, sans-serif;
   font-weight: 700;
 }
 
@@ -12717,7 +12718,7 @@ textarea.parsley-error:active {
 .widget-5 .list-group-item .msg-top span:last-child {
   color: #adb5bd;
   font-size: 11px;
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Verdana, sans-serif;
 }
 .widget-5 .list-group-item .msg-summary {
   font-size: 12px;
@@ -12767,7 +12768,7 @@ textarea.parsley-error:active {
 .widget-6 .chat-time {
   font-size: 11px;
   color: #adb5bd;
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Verdana, sans-serif;
   margin-left: 5px;
 }
 .widget-6 .chat-1,
@@ -12898,7 +12899,7 @@ textarea.parsley-error:active {
   color: #17A2B8;
 }
 .widget-9 .wt-time {
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Verdana, sans-serif;
   font-size: 12px;
 }
 
@@ -12908,7 +12909,7 @@ textarea.parsley-error:active {
   margin-left: 15px;
 }
 .rtl .widget-9 .wt-time {
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Verdana, sans-serif;
   font-size: 12px;
 }
 
@@ -12959,7 +12960,7 @@ textarea.parsley-error:active {
   color: #343a40;
 }
 .widget-11 li > span {
-  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Quicksand", "Helvetica Neue", Verdana, sans-serif;
   font-size: 13px;
   color: #868e96;
 }
@@ -13051,7 +13052,7 @@ textarea.parsley-error:active {
 }
 .widget-14 .card-footer .btn, .widget-14 .card-footer .sp-container button, .sp-container .widget-14 .card-footer button {
   text-transform: uppercase;
-  font-family: "Montserrat", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Montserrat", "Fira Sans", "Helvetica Neue", Verdana, sans-serif;
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -13099,7 +13100,7 @@ textarea.parsley-error:active {
 }
 .widget-15 .card-footer .btn, .widget-15 .card-footer .sp-container button, .sp-container .widget-15 .card-footer button {
   text-transform: uppercase;
-  font-family: "Montserrat", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Montserrat", "Fira Sans", "Helvetica Neue", Verdana, sans-serif;
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -13485,12 +13486,12 @@ table.dataTable.no-footer {
 /* ############### 4.5 IonRangeSlider ############### */
 /* -------------------------------------------------- */
 .irs-min, .irs-max {
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Verdana, sans-serif;
   border-radius: 1px;
 }
 
 .irs-from, .irs-to, .irs-single {
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Verdana, sans-serif;
   background-color: #17A2B8;
   border-radius: 1px;
 }
@@ -14314,7 +14315,7 @@ table.dataTable.no-footer {
 
 /* Setup basic CSS for Label */
 .jqvmap-pin {
-  font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Fira Sans", "Helvetica Neue", Verdana, sans-serif;
   cursor: default;
   pointer-events: none;
 }
@@ -14591,7 +14592,7 @@ table.dataTable.no-footer {
 }
 .fc-datepicker-color .ui-datepicker-calendar th {
   color: rgba(255, 255, 255, 0.5);
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Verdana, sans-serif;
 }
 .fc-datepicker-color .ui-datepicker-calendar td {
   background-color: transparent;
@@ -15299,7 +15300,7 @@ textarea.parsley-success:focus {
   padding: 8px 15px;
   background-image: none;
   background-color: #ced4da;
-  font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Fira Sans", "Helvetica Neue", Verdana, sans-serif;
   font-size: 12px;
   text-shadow: none;
   text-transform: capitalize;
@@ -15313,7 +15314,7 @@ textarea.parsley-success:focus {
 }
 
 .sp-button-container .sp-cancel {
-  font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Fira Sans", "Helvetica Neue", Verdana, sans-serif;
   font-size: 12px;
   text-transform: capitalize;
   color: #868e96 !important;
@@ -15441,7 +15442,7 @@ textarea.parsley-success:focus {
 .card-header.note-toolbar > .btn-group .dropdown-item blockquote,
 .card-header.note-toolbar > .btn-group .dropdown-item pre {
   margin-bottom: 0;
-  font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Fira Sans", "Helvetica Neue", Verdana, sans-serif;
   font-size: 13px;
 }
 .card-header.note-toolbar > .btn-group .dropdown-item h1, .card-header.note-toolbar > .btn-group .dropdown-item h2, .card-header.note-toolbar > .btn-group .dropdown-item h3, .card-header.note-toolbar > .btn-group .dropdown-item h4, .card-header.note-toolbar > .btn-group .dropdown-item h5, .card-header.note-toolbar > .btn-group .dropdown-item h6 {
@@ -15458,7 +15459,7 @@ textarea.parsley-success:focus {
   padding-left: 5px;
 }
 .card-header.note-toolbar > .btn-group .dropdown-fontname .dropdown-item span {
-  font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif !important;
+  font-family: "Fira Sans", "Helvetica Neue", Verdana, sans-serif !important;
   font-size: 12px;
 }
 
@@ -15552,7 +15553,7 @@ textarea.parsley-success:focus {
 .toggle-slide .toggle-on,
 .toggle-slide .toggle-off {
   opacity: 0;
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Verdana, sans-serif;
   font-weight: 400;
 }
 .toggle-slide .toggle-on.active,
@@ -15942,7 +15943,7 @@ textarea.parsley-success:focus {
 .profile-earning-amount {
   margin-bottom: 0;
   color: #343a40;
-  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Quicksand", "Helvetica Neue", Verdana, sans-serif;
   font-weight: 700;
 }
 
@@ -16168,7 +16169,7 @@ textarea.parsley-success:focus {
   display: block;
   text-transform: uppercase;
   font-size: 10px;
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Verdana, sans-serif;
   color: #fff;
   letter-spacing: 1px;
   white-space: nowrap;
@@ -16314,7 +16315,7 @@ textarea.parsley-success:focus {
 }
 .info-list .info-list-label {
   font-size: 10px;
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Verdana, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: rgba(255, 255, 255, 0.3);
@@ -16322,7 +16323,7 @@ textarea.parsley-success:focus {
   white-space: nowrap;
 }
 .info-list .info-list-amount {
-  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Quicksand", "Helvetica Neue", Verdana, sans-serif;
   color: #fff;
   font-weight: 400;
   margin-bottom: 0;
@@ -16530,7 +16531,7 @@ textarea.parsley-success:focus {
 
 .br-time {
   color: #fff;
-  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Quicksand", "Helvetica Neue", Verdana, sans-serif;
   margin-bottom: 5px;
 }
 
@@ -16748,7 +16749,7 @@ textarea.parsley-success:focus {
 
 .br-section-label-sm {
   font-size: 11px;
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Verdana, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 40px;
@@ -16963,7 +16964,7 @@ textarea.parsley-success:focus {
   justify-content: center;
   height: 40px;
   font-size: 11px;
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Verdana, sans-serif;
   letter-spacing: 1px;
 }
 .br-subleft .btn-compose i {
@@ -17213,7 +17214,7 @@ textarea.parsley-success:focus {
 .table-contact tbody tr td:nth-child(4), .table-contact tbody tr td:nth-child(5),
 .table-contact tbody tr th:nth-child(4),
 .table-contact tbody tr th:nth-child(5) {
-  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Quicksand", "Helvetica Neue", Verdana, sans-serif;
   font-size: 13px;
 }
 .table-contact tbody tr td:nth-child(4),
@@ -17878,7 +17879,7 @@ textarea.parsley-success:focus {
   text-transform: uppercase;
   font-size: 11px;
   font-weight: 500;
-  font-family: "Montserrat", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Montserrat", "Fira Sans", "Helvetica Neue", Verdana, sans-serif;
   padding: 12px 25px;
   letter-spacing: 0.5px;
   border: 0;
@@ -50653,35 +50654,35 @@ a.hover-white-8:hover, a.hover-white-8:focus {
 }
 
 .tx-poppins {
-  font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Poppins", "Helvetica Neue", Verdana, sans-serif;
 }
 
 .tx-roboto {
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Verdana, sans-serif;
 }
 
 .tx-hind {
-  font-family: "Hind", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Hind", "Helvetica Neue", Verdana, sans-serif;
 }
 
 .tx-firasans {
-  font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Fira Sans", "Helvetica Neue", Verdana, sans-serif;
 }
 
 .tx-source {
-  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Source Sans Pro", "Helvetica Neue", Verdana, sans-serif;
 }
 
 .tx-mont {
-  font-family: "Montserrat", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Montserrat", "Fira Sans", "Helvetica Neue", Verdana, sans-serif;
 }
 
 .tx-lato {
-  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Quicksand", "Lato", "Helvetica Neue", Verdana, sans-serif; //se modifica solamente la fuente primaria para no modificar los llamados a esta clase aunque se entiende que no hay ninguno
 }
 
 .tx-sserif {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Verdana, sans-serif;
 }
 
 .tx-barcode {
@@ -50713,7 +50714,7 @@ a.hover-white-8:hover, a.hover-white-8:focus {
 }
 
 .tx-info {
-  color: #17A2B8;
+  color: #ef2e24;
 }
 
 .tx-inverse {
