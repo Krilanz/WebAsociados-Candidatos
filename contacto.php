@@ -85,27 +85,27 @@ if(isset($_GET['descargar']))
         <label for="nombcompl" class="control-label">Nombre Completo</label>
         <input type="text" class="form-control" required="required" id="nombcntfrm" name="nombrecnt">
     </div>       
-
+              <br>
     <div class="form-contact"> 
         <label for="tel" class="control-label">Telefono</label>
         <input type="text" class="form-control" pattern="[0-9]{0,20}" required="required" id="telcntfrm" name="telefonocnt">
     </div>                    
-                            
+             <br>                
     <div class="form-contact">
         <label for="dni" class="control-label">DNI</label>
         <input type="text" class="form-control" required="required" pattern="[0-9]{0,20}" title="Debe llevar solo numeros" id="dnicntfrm" name="dnicnt">
     </div>   
-
+ <br>
     <div class="form-contact">
         <label for="correo" class="control-label">Correo Electronico</label>
         <input type="email" class="form-control" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Por favor ingresa un email valido" id="emailcntfrm" name="emailcnt">
     </div>  
-              
+            <br>   
     <div class="form-contact">
         <label for="city_id" class="control-label">Compañía en la que Trabaja</label>
         <input type="text" class="form-control" required="required" id="companycntfrm" name="compania">
     </div>                                    
-                            
+           <br>                  
     <div class="form-contact">
         <label for="state_id" class="control-label">Sucursal de Adecco</label>
         <select class="form-control" id="succntfrm" required="required">
@@ -113,7 +113,7 @@ if(isset($_GET['descargar']))
             <option value="CABA | Belgrano - Av. Cabildo 4466">CABA | Belgrano - Av. Cabildo 4466</option><option value="CABA | Centro - Av. Córdoba 1101">CABA | Centro - Av. Córdoba 1101</option><option value="CABA | Hoteles y Catering - B. de Irigoyen 454">CABA | Hoteles y Catering - B. de Irigoyen 454</option><option value="Buenos Aires | Caseros ">Buenos Aires | Caseros </option><option value="Buenos Aires | General Rodriguez">Buenos Aires | General Rodriguez</option><option value="Buenos Aires | Mercedes">Buenos Aires | Mercedes</option><option value="Buenos Aires | Morón">Buenos Aires | Morón</option><option value="Buenos Aires | San Justo">Buenos Aires | San Justo</option><option value="Buenos Aires | Pergamino">Buenos Aires | Pergamino</option><option value="Buenos Aires | San Isidro">Buenos Aires | San Isidro</option><option value="Buenos Aires | Pacheco">Buenos Aires | Pacheco</option><option value="Buenos Aires | Pilar Parque">Buenos Aires | Pilar Parque</option><option value="Buenos Aires | San Nicolás de los Arroyos">Buenos Aires | San Nicolás de los Arroyos</option><option value="Buenos Aires | Zárate">Buenos Aires | Zárate</option><option value="Buenos Aires | Avellaneda ">Buenos Aires | Avellaneda </option><option value="Buenos Aires | Bahía Blanca">Buenos Aires | Bahía Blanca</option><option value="Buenos Aires | Cañuelas">Buenos Aires | Cañuelas</option><option value="Buenos Aires | La Plata">Buenos Aires | La Plata</option><option value="Buenos Aires | Lomas de Zamora">Buenos Aires | Lomas de Zamora</option><option value="Buenos Aires | Mar del Plata">Buenos Aires | Mar del Plata</option><option value="Córdoba | Capital">Córdoba | Capital</option><option value="Córdoba | Río Cuarto">Córdoba | Río Cuarto</option><option value="Chubut | Comodoro Rivadavia">Chubut | Comodoro Rivadavia</option><option value="Entre Ríos | Gualeguaychú">Entre Ríos | Gualeguaychú</option><option value="Mendoza | Capital">Mendoza | Capital</option><option value="Mendoza | Maipú">Mendoza | Maipú</option><option value="Neuquén | Capital">Neuquén | Capital</option><option value="Río Negro | General Roca">Río Negro | General Roca</option><option value="Salta | Capital">Salta | Capital</option><option value="San Juan | Capital">San Juan | Capital</option><option value="San Luis | Capital">San Luis | Capital</option><option value="San Luis | Villa Mercedes">San Luis | Villa Mercedes</option><option value="Santa Fé | Venado Tuerto">Santa Fé | Venado Tuerto</option><option value="Santa Fé | Capital">Santa Fé | Capital</option><option value="Santa Fé | Rosario - Bvd. Oroño 4606">Santa Fé | Rosario - Bvd. Oroño 4606</option><option value="Santa Fé | Rosario - Santa Fé 1441">Santa Fé | Rosario - Santa Fé 1441</option><option value="Tucumán | San Miguel de Tucumán">Tucumán | San Miguel de Tucumán</option><option value="Desconozco / No recuerdo">Desconozco / No recuerdo</option></select>
         </select>                    
     </div>
-    
+     <br>
               <div class="form-contact"> 
         <label for="state_id" class="control-label">Motivo de Consulta</label>
         <select class="form-control" id="motivcntfrm" required="required">
@@ -121,7 +121,7 @@ if(isset($_GET['descargar']))
             <option value="Recibo de Sueldo">Recibo de Sueldo</option><option value="Obra Social">Obra Social</option><option value="Contratación / Situación Laboral">Contratación / Situación Laboral</option><option value="ART-Accidente de Trabajo">ART-Accidente de Trabajo</option><option value="Otro">Otro</option>
         </select>                    
     </div>      
-    
+     <br>
     <div class="form-contact">
         <button type="submit" class="btn btn-primary">Enviar!</button>
     </div>     
