@@ -105,6 +105,10 @@ if (isset($_POST['submit'])) {
             PodioItem::update($_SESSION['userId'], array('fields' => array(
                 "contrasena" => $_POST['newPassword']
             )));
+            //Si la contrasena es modificada por primera vez se modifica el campo "primer-login"
+             PodioItem::update($_SESSION['userId'], array('fields' => array(
+                'primer-login' => "no"
+            )));
             
             echo '<script language="javascript">';
             echo ' window.location.href = "news.php?cambiarPassword=1" ; ';
