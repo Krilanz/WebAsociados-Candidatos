@@ -114,14 +114,14 @@ if(isset($_POST['buscar']))
                           <p class="tx-14 tx-gray-600 mg-b-25"> <?php echo $item->fields["descripcion"] == null ? "" : $item->fields["descripcion"] -> values ?> </p>
                           <p class="tx-10 tx-gray-600 mg-b-25"> Vigente desde el <?php echo $item->fields["vigencia"]-> values["start"] == null ? "" : $item->fields["vigencia"]-> values["start"] -> format('Y/m/d') ?> hasta el <?php echo $item->fields["vigencia"]-> values["end"] == null ? "" : $item->fields["vigencia"]-> values["end"] -> format('Y/m/d') ?> </p> <!---Item href "Bases" removida--->
                           <p class="tx-15 mg-b-5">
-                            <button class="btn btn-primary printbtn" ><i class="fa fa-fw fa-lg fa-exchange"></i>Imprimir</button>
+                            <button class="btn btn-primary printbtn" style="position: relative; left:0px; bottom:-10px;" ><i class="fa fa-fw fa-lg fa-exchange"></i>Imprimir</button>
                           </p>
                         </div><!-- card-body -->
                       </div><!-- card -->
             <?php
                 if( $count == 3  ){
                     $count = 0;
-                    
+
                 ?>
 
                       </div><!-- card-body -->
