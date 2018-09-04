@@ -21,7 +21,7 @@ $itemsBeneficios = PodioItem::filter($appBeneficios_id);
 
 if(isset($_POST['buscar']))
 {
-   
+
    //buscar beneficios por filtro
    $itemsBeneficios = PodioItem::filter($appBeneficios_id, [
         'filters' => [
@@ -45,7 +45,7 @@ if(isset($_POST['buscar']))
     <link rel="stylesheet" type="text/css" href="css/bracket.css">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
   </head>
   <body class="app sidebar-mini rtl">
   <?php
@@ -80,9 +80,9 @@ if(isset($_POST['buscar']))
                             <option value="3">ELECTRÓNICA</option>
 
                             <option value="4">ENTRETENIMIENTO</option>
-                            
+
                             <option value="5">INDUMENTARIA</option>
-                            
+
                             <option value="6">SEGUROS</option>
                 </select>
                 </div>
@@ -93,50 +93,54 @@ if(isset($_POST['buscar']))
           </form>
     </div>
      <div class="br-pagebody pd-x-20 pd-sm-x-30 mx-wd-1350">
-         
+
         <div class="card-deck card-deck-sm mg-x-0">
             <?php
                 $count = 0;
+                echo"<script>var arLenghtPrint = 0;
+                window.console.log(arLenghtPrint);</script>";
                 foreach ($itemsBeneficios as $item) {
-                    $count++; 
+                    $count++;
+                  echo"<script>arLenghtPrint++;
+                  window.console.log(arLenghtPrint);</script>";
                 ?>
-                    <div class="card shadow-base bd-0 mg-0">
+                    <div class="card shadow-base bd-0 mg-0 ">
                         <figure class="card-item">
                           <img class="img-fluid rounded-top" style="width: auto;height: 280px;"src="<?php echo $item->fields["imagen"] -> values[0]-> link; ?>" alt="Image">
                         </figure>
-                        <div class="card-body pd-25">
+                        <div class="card-body pd-25" id="imprimir<?php echo $count;?>">
                           <p class="tx-20 tx-uppercase tx-mont tx-semibold tx-info"><?php echo $item->fields["title"]-> values ?></p>
                           <h5 class="tx-normal tx-roboto lh-3 mg-b-15"><a href="" class="tx-inverse hover-info"> Descuento: <?php echo $item->fields["descuento-3"]-> values ?> </a></h5>
                           <p class="tx-14 tx-gray-600 mg-b-25"> <?php echo $item->fields["descripcion"] == null ? "" : $item->fields["descripcion"] -> values ?> </p>
                           <p class="tx-10 tx-gray-600 mg-b-25"> Vigente desde el <?php echo $item->fields["vigencia"]-> values["start"] == null ? "" : $item->fields["vigencia"]-> values["start"] -> format('Y/m/d') ?> hasta el <?php echo $item->fields["vigencia"]-> values["end"] == null ? "" : $item->fields["vigencia"]-> values["end"] -> format('Y/m/d') ?> </p> <!---Item href "Bases" removida--->
                           <p class="tx-15 mg-b-5">
-                            <button class="btn btn-primary" ><i class="fa fa-fw fa-lg fa-exchange"></i>Imprimir</button> 
+                            <button class="btn btn-primary printbtn" ><i class="fa fa-fw fa-lg fa-exchange"></i>Imprimir</button>
                           </p>
                         </div><!-- card-body -->
                       </div><!-- card -->
             <?php
-                if( $count == 3  ){ 
+                if( $count == 3  ){
                     $count = 0;
                     
-                ?>  
-                    
+                ?>
+
                       </div><!-- card-body -->
                     </div><!-- card -->
-                    
+
                     <div class="br-pagebody pd-x-20 pd-sm-x-30 mx-wd-1350">
                         <div class="card-deck card-deck-sm mg-x-0">
 
                 <?php
-                
+
                 }
             }
-            ?>  
+            ?>
 
         </div><!-- card-body -->
-    </div><!-- card --> 
-          
-        
-        
+    </div><!-- card -->
+
+
+
     </main>
     <!-- Essential javascripts for application to work-->
     <script src="js/jquery-3.2.1.min.js"></script>
@@ -149,8 +153,9 @@ if(isset($_POST['buscar']))
     <script type="text/javascript" src="js/plugins/bootstrap-datepicker.min.js"></script>
     <script type="text/javascript" src="js/plugins/chart.js"></script>
     <script type="text/javascript" src="js/plugins/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
     <script type="text/javascript">
-        
+
       var data = {
       	labels: ["January", "February", "March", "April", "May"],
       	datasets: [
@@ -190,19 +195,19 @@ if(isset($_POST['buscar']))
       		label: "In-Progress"
       	}
       ]
-      
+
       /*var ctxl = $("#lineChartDemo").get(0).getContext("2d");
       var lineChart = new Chart(ctxl).Line(data);
-      
+
       var ctxp = $("#pieChartDemo").get(0).getContext("2d");
       var pieChart = new Chart(ctxp).Pie(pdata);*/
-      
+
       $('#fecha').datepicker({
       	format: "yyyy-mm-dd",
       	autoclose: true,
       	todayHighlight: true
       });
-     
+
     </script>
     <!-- Google analytics script-->
     <script type="text/javascript">
@@ -215,6 +220,42 @@ if(isset($_POST['buscar']))
       	ga('send', 'pageview');
       }
     </script>
+
+<script>
+    $(document).ready(function() {
+        $('button.printbtn').click(function() {
+          var pdf = new jsPDF('p', 'pt', 'letter');
+          var arlenghtPos = arLenghtPrint-4;
+          arlenghtPos = '#imprimir'+arlenghtPos.toString();
+          source = $('#imprimir4')[0];
+          window.console.log(source);
+
+          specialElementHandlers = {
+              '#bypassme': function (element, renderer) {
+                  return true
+              }
+          };
+          margins = {
+              top: 80,
+              bottom: 60,
+              left: 40,
+              width: 522
+          };
+
+          pdf.fromHTML(
+              source,
+              margins.left, // x coord
+              margins.top, { // y coord
+                  'width': margins.width,
+                  'elementHandlers': specialElementHandlers
+              },
+
+              function (dispose) {
+                  pdf.save('Prueba.pdf');
+              }, margins
+          );
+        });
+    });
+</script>
   </body>
 </html>
-

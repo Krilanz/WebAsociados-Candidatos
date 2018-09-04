@@ -573,6 +573,15 @@ pre code {
   margin-left: auto;
 }
 
+.loginlogoadecco
+{
+  margin: auto;
+  display:block; padding-bottom:10px;
+  padding-left:9px;
+  margin-top:-6px;
+  content: url("https://www.adecco.com.ar/wp-content/uploads/2016/09/logo.png");
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
@@ -14104,7 +14113,9 @@ be a descendant of the grid when it is being dragged.
 }
 
 .material-half-bg .cover {
-  background-color: #DA291C;
+  background: url("../images/logtexture.jpg");
+  background-repeat:no-repeat;
+  background-size:110%;
   height: 50vh;
 }
 
@@ -14838,3 +14849,7 @@ be a descendant of the grid when it is being dragged.
     display:block!important;
 }
 
+.termslist
+{
+  list-style-image: url("https://www.adecco.com.ar/wp-content/themes/adecco/assets/img/arrow.png");
+}
