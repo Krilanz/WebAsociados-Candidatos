@@ -47,7 +47,7 @@ $_SESSION['userGastado']= $userItem->fields["gastado-2"]-> values;
 <html lang="en">
   <head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
     <title>Adecco - Asociados & Candidatos</title>
-    
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Main CSS-->
@@ -55,7 +55,7 @@ $_SESSION['userGastado']= $userItem->fields["gastado-2"]-> values;
     <link rel="stylesheet" href="css/sweetalert2.css">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
   </head>
   <body class="app sidebar-mini rtl">
   <?php
@@ -66,7 +66,7 @@ $_SESSION['userGastado']= $userItem->fields["gastado-2"]-> values;
         <div>
           <h1><i class="fa fa-money"></i> Reintegro De Gastos</h1>
           <p></p>
-        </div>        
+        </div>
       </div>
       <!--<div class="row">
         <div class="col-md-4">
@@ -124,17 +124,17 @@ $_SESSION['userGastado']= $userItem->fields["gastado-2"]-> values;
                         <label class="control-label">Comprobante</label>
                         <input class="form-control" id="comprobante" name="comprobante" type="file" required>
                       </div>
-                        
+
                       <div class="tile-footer">
                           <button class="btn btn-primary" name="submit" type="submit" value="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Cargar</button>
                       </div>
                     </form>
                   </div>
-                  
-          </div>  
+
+          </div>
         </div>
           <div class="col-md-6">
-          
+
               <div class="tile">
                 <h3 class="tile-title">Pedidos</h3>
                 <div class="table-responsive">
@@ -153,11 +153,11 @@ $_SESSION['userGastado']= $userItem->fields["gastado-2"]-> values;
                     <?php
                     $count = 0;
                     foreach ($userViaticos as $item) {
-                        $count++; 
+                        $count++;
                     ?>
                       <tr style="background:#<?php echo $item->fields["estado"]-> values[0]['color'] ?>">
                             <td><?php echo $count ?></td>
-                            <td><?php echo $item->fields["fecha-de-solicitud"]-> values["start"] == null ? "" : $item->fields["fecha-de-solicitud"]-> values["start"] -> format('Y-m-d') ?></td>                            
+                            <td><?php echo $item->fields["fecha-de-solicitud"]-> values["start"] == null ? "" : $item->fields["fecha-de-solicitud"]-> values["start"] -> format('Y-m-d') ?></td>
                             <td><?php echo $item->fields["motivo"] == null ? "" : $item->fields["motivo"]-> values ?></td>
                             <td><?php echo $item->fields["monto-total"]-> values['currency'] . ' ' . (string)round($item->fields["monto-total"]-> values["value"],2)  ?></td>
                             <td><?php echo $item->fields["estado"] == null ? "" : $item->fields["estado"]-> values[0]['text'] ?></td>
@@ -169,7 +169,7 @@ $_SESSION['userGastado']= $userItem->fields["gastado-2"]-> values;
                 </table>
                 </div>
               </div>
-            
+
           </div>
 
       </div>
@@ -190,7 +190,7 @@ $_SESSION['userGastado']= $userItem->fields["gastado-2"]-> values;
     <script type="text/javascript" src="js/plugins/chart.js"></script>
     <script type="text/javascript" src="js/plugins/select2.min.js"></script>
     <script type="text/javascript">
-        
+
       var data = {
       	labels: ["January", "February", "March", "April", "May"],
       	datasets: [
@@ -230,19 +230,24 @@ $_SESSION['userGastado']= $userItem->fields["gastado-2"]-> values;
       		label: "In-Progress"
       	}
       ]
-      
+
       /*var ctxl = $("#lineChartDemo").get(0).getContext("2d");
       var lineChart = new Chart(ctxl).Line(data);
-      
+
       var ctxp = $("#pieChartDemo").get(0).getContext("2d");
       var pieChart = new Chart(ctxp).Pie(pdata);*/
-      
+
       $('#fecha').datepicker({
       	format: "yyyy-mm-dd",
       	autoclose: true,
       	todayHighlight: true
       });
-     
+
+      document.getElementById("monto").onkeypress = function(e) {
+     var chr = String.fromCharCode(e.which);
+     if ("-".indexOf(chr) >= 0) //tecla - bloqueada
+         return false;
+       };
     </script>
     <!-- Google analytics script-->
     <script type="text/javascript">
@@ -271,11 +276,11 @@ if ($_SESSION['NuevoViatico'] == 1) {
 if(isset($_POST['submit']))
 {
     try{
-        
-    
+
+
         $disponible = (float)$_SESSION['userDisponible'];
         if( (int)$_POST['monto'] > $disponible ){
-            
+
             /*echo '<script language="javascript">';
             echo 'document.getElementById("fecha").value ="'.$_POST['fecha'].'" ';
             echo '</script>';*/
@@ -287,26 +292,26 @@ if(isset($_POST['submit']))
             echo '<script language="javascript">';
             echo 'document.getElementById("monto").value ="'.$_POST['monto'].'" ';
             echo '</script>';
-        
+
             echo '<script language="javascript">';
             echo 'swal("Error","Ha excedido el límite establecido, se lo contactará a la brevedad","error")';
             echo '</script>';
             return;
         }
-        
+
         $target_dir = "uploads/";
         $target_file = $target_dir . basename($_FILES["comprobante"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-        
+
         // Check if image file is a actual image or fake image
         $check = getimagesize($_FILES["comprobante"]["tmp_name"]);
-        if($check == false) {       
+        if($check == false) {
             echo '<script language="javascript">';
             echo 'swal("Error","El archivo de comprobante tiene que ser una imagen.","error")';
             echo '</script>';
             return;
         }
-        
+
         // Check if file already exists
         /*if (file_exists($target_file)) {
             echo "Sorry, file already exists.";
@@ -327,7 +332,7 @@ if(isset($_POST['submit']))
             echo '</script>';
             return;
         }
-        
+
         if (move_uploaded_file($_FILES["comprobante"]["tmp_name"], $target_file)) {
             //echo "The file ". basename( $_FILES["comprobante"]["name"]). " has been uploaded.";
         } else {
@@ -336,61 +341,61 @@ if(isset($_POST['submit']))
             echo '</script>';
             return;
         }
-    
+
         require_once 'podio-php/PodioAPI.php';
         Podio::setup($client_id, $client_secret);
         Podio::authenticate_with_app($appViaticos_id, $appViaticos_token);
-    
+
         $comprobanteUpload = PodioFile::upload( $target_file, $_FILES["comprobante"]["name"] );
-        
-        
-        
+
+
+
        //Creo el nuevo viatico
        $newViatico = PodioItem::create($appViaticos_id, array('fields' => array(
                     //"descripcion" => $_POST['proyecto'],
                     "fecha-de-solicitud" =>   date("Y-m-d H:i:s") ,
                     "motivo" =>   $_POST['motivo'] == "" ? null : $_POST['motivo'],
-                    "monto-total" => $_POST['monto'], 
+                    "monto-total" => $_POST['monto'],
                     "comprobante-2" => $comprobanteUpload -> file_id ,
                     "usuario" => intval($_SESSION['userId']),
                     "estado" => 1,
                 )));
-       
+
        unlink($target_file);
     } catch (Exception $e) {
-        
-        
+
+
         /*echo '<script language="javascript">';
         echo 'document.getElementById("fecha").value ="'.$_POST['fecha'].'" ';
         echo '</script>';*/
-        
+
         echo '<script language="javascript">';
         echo 'document.getElementById("motivo").textContent="'.$_POST['motivo'].'" ';
         echo '</script>';
-        
+
         echo '<script language="javascript">';
         echo 'document.getElementById("monto").value ="'.$_POST['monto'].'" ';
         echo '</script>';
-        
-        
+
+
         echo '<script language="javascript">';
         echo 'swal("Error","Hubo un error al solicitar el reintegro.","error")';
         echo '</script>';
-        
-        
+
+
         return;
     }
-    
+
    $_SESSION['NuevoViatico'] = 1;
    echo '<script language="javascript">';
    echo ' window.location.href = "viaticos.php" ; ';
    echo '</script>';
-   
 
-  
-   
 
-   
+
+
+
+
 
 }
 
