@@ -9,8 +9,8 @@ if (!isset($_SESSION['userId'])) {
 
 
 
-$client_id = 'asociadoscandidatos';
-$client_secret = 'SrHDWvpDT2vLPIVgQ6axrkIOgYPr36hHqnnvow9uQCBUWCbz5330lP8k5pu6uNCr';
+$client_id = 'asociadoscandidatos-i5gbls';
+$client_secret = 'an1aMc59Oz9vCoS0WXT2JQtX3IC44IgQ3BN1aHtAdPSLzk8CJXxPFYnhqivbgNE5';
 
 require_once 'podio-php/PodioAPI.php';
 
@@ -40,6 +40,30 @@ $fieldLimite = $userItem->fields["limite-mensual"]-> values;
 $_SESSION['userLimiteMensual']= $fieldLimite['currency'] . ' ' . (string)round($fieldLimite['value'],2);
 $_SESSION['userDisponible']= $userItem->fields["disponible-3"]-> values;
 $_SESSION['userGastado']= $userItem->fields["gastado-2"]-> values;
+
+
+
+if(isset($_GET['descargar']))
+{
+   
+   //Descargar documentación 
+   // Get the file object. Only necessary if you don't already have it!
+    $file = PodioFile::get($_GET['descargar']);
+
+    // Download the file. This might take a while...
+    //$file_content = $file->get_raw();
+    
+    $file_content = Podio::get($file->link . '/medium', array(), array('file_download' => true))->body;
+    // Store the file on local disk
+    header("Content-Description: File Transfer"); 
+    header("Content-Type: application/octet-stream"); 
+    header("Content-Disposition: attachment; filename='" . $file -> name . "'"); 
+    file_put_contents("downloads/" . $file -> name, $file_content);
+
+    //readfile("downloads/" . $file -> name);
+    unlink("downloads/" . $file -> name);
+}
+
 
 ?>
 
@@ -147,6 +171,7 @@ $_SESSION['userGastado']= $userItem->fields["gastado-2"]-> values;
                       <th>Motivo</th>
                       <th>Monto Total</th>
                       <th>Estado</th>
+                      <th>Imprimir</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -154,6 +179,7 @@ $_SESSION['userGastado']= $userItem->fields["gastado-2"]-> values;
                     $count = 0;
                     foreach ($userViaticos as $item) {
                         $count++;
+
                     ?>
                       <tr style="background:#<?php echo $item->fields["estado"]-> values[0]['color'] ?>">
                             <td><?php echo $count ?></td>
@@ -161,6 +187,7 @@ $_SESSION['userGastado']= $userItem->fields["gastado-2"]-> values;
                             <td><?php echo $item->fields["motivo"] == null ? "" : $item->fields["motivo"]-> values ?></td>
                             <td><?php echo $item->fields["monto-total"]-> values['currency'] . ' ' . (string)round($item->fields["monto-total"]-> values["value"],2)  ?></td>
                             <td><?php echo $item->fields["estado"] == null ? "" : $item->fields["estado"]-> values[0]['text'] ?></td>
+                            <td><a href="viaticos.php?descargar=<?php echo $item->fields["comprobante-2"] -> values[0] -> file_id ?>">Imprimir</a></td>
                         </tr>
                     <?php
                     }
@@ -173,6 +200,8 @@ $_SESSION['userGastado']= $userItem->fields["gastado-2"]-> values;
           </div>
 
       </div>
+      
+         <?php include_once('_footer.html');?>  
     </main>
     <!-- Essential javascripts for application to work-->
     <script src="js/jquery-3.2.1.min.js"></script>
@@ -269,7 +298,8 @@ $_SESSION['userGastado']= $userItem->fields["gastado-2"]-> values;
 if ($_SESSION['NuevoViatico'] == 1) {
     $_SESSION['NuevoViatico'] = 0;
     echo '<script language="javascript">';
-    echo 'swal("Nuevo Reintegro","El reintegro se ha cargado correctamente","success")';
+    echo 'swal("Nuevo Reintegro","El reintegro se ha cargado correctamente.'
+    . ' Recordá acercar los comprobantes originales a la Sucursal Adecco.","success")';
     echo '</script>';
 }
 

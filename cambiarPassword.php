@@ -66,6 +66,8 @@
     <!-- The javascript plugin to display page loading on top-->
     <script src="js/plugins/pace.min.js"></script>
   </body>
+  
+  
 </html>
 
 
@@ -73,8 +75,9 @@
 <?php
 session_start();
 
-$client_id = 'asociadoscandidatos';
-$client_secret = 'SrHDWvpDT2vLPIVgQ6axrkIOgYPr36hHqnnvow9uQCBUWCbz5330lP8k5pu6uNCr';
+$client_id = 'asociadoscandidatos-i5gbls';
+$client_secret = 'an1aMc59Oz9vCoS0WXT2JQtX3IC44IgQ3BN1aHtAdPSLzk8CJXxPFYnhqivbgNE5';
+
     
 if (isset($_POST['submit'])) {
 

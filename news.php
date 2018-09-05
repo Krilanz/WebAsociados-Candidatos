@@ -33,7 +33,7 @@ $_SESSION['userNombre'] = $userItem->fields["nombre"]-> values;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Main CSS-->
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
     <link rel="stylesheet" href="css/sweetalert2.css">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -55,6 +55,8 @@ $_SESSION['userNombre'] = $userItem->fields["nombre"]-> values;
         </iframe>
         
         <?php //include ("https://www.rssdog.com/index.php?url=http%3A%2F%2Fwww.globiflow.com%2Fpodiofeed.php%3Fc%3D5609%26a%3D176650%26f%3D2562&mode=html&showonly=&maxitems=0&showdescs=1&desctrim=0&descmax=0&tabwidth=100%25&linktarget=_blank&textsize=inherit&bordercol=%23d4d0c8&headbgcol=%23999999&headtxtcol=%23ffffff&titlebgcol=%23f1eded&titletxtcol=%23000000&itembgcol=%23ffffff&itemtxtcol=%23000000&ctl=0"); ?>
+        
+           <?php include_once('_footer.html');?>  
     </main>
     <!-- Essential javascripts for application to work-->
     <script src="js/jquery-3.2.1.min.js"></script>

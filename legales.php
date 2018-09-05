@@ -135,6 +135,8 @@ En todo caso, de ser requerido por orden judicial Adecco colaborará con las aut
          <br>
          <p>Adecco se reserva el derecho a modificar unilateralmente la configuración de esta Web Site o los servicios en ella prestados, en cualquier momento y sin necesidad de previo aviso.</p>
        </ul>
+        
+           <?php include_once('_footer.html');?>  
     </main>
     <!-- Essential javascripts for application to work-->
     <script src="js/jquery-3.2.1.min.js"></script>

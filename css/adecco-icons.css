@@ -1,0 +1,264 @@
+@font-face {
+  font-family: 'adecco-icons';
+  src:  url('../fonts/adecco-icons.eot?hh8h4q');
+  src:  url('../fonts/adecco-icons.eot?hh8h4q#iefix') format('embedded-opentype'),
+    url('../fonts/adecco-icons.ttf?hh8h4q') format('truetype'),
+    url('../fonts/adecco-icons.woff?hh8h4q') format('woff'),
+    url('../fonts/adecco-icons.svg?hh8h4q#adecco-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="adecco-icon-"], [class*=" adecco-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'adecco-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.adecco-icon-computing:before {
+  content: "\21";
+}
+.adecco-icon-tools-resource:before {
+  content: "\22";
+}
+.adecco-icon-transport-outline:before {
+  content: "\23";
+}
+.adecco-icon-transportation:before {
+  content: "\24";
+}
+.adecco-icon-twitter:before {
+  content: "\25";
+}
+.adecco-icon-unlock:before {
+  content: "\26";
+}
+.adecco-icon-up:before {
+  content: "\27";
+}
+.adecco-icon-video:before {
+  content: "\28";
+}
+.adecco-icon-search:before {
+  content: "\30";
+}
+.adecco-icon-skills:before {
+  content: "\31";
+}
+.adecco-icon-document-specific:before {
+  content: "\32";
+}
+.adecco-icon-star:before {
+  content: "\33";
+}
+.adecco-icon-star-outline:before {
+  content: "\34";
+}
+.adecco-icon-view-outline:before {
+  content: "\35";
+}
+.adecco-icon-view:before {
+  content: "\36";
+}
+.adecco-icon-warning:before {
+  content: "\37";
+}
+.adecco-icon-warehousing:before {
+  content: "\38";
+}
+.adecco-icon-wallet-outline:before {
+  content: "\39";
+}
+.adecco-icon-search-hamburger:before {
+  content: "\41";
+}
+.adecco-icon-hamburger:before {
+  content: "\42";
+}
+.adecco-icon-heart:before {
+  content: "\43";
+}
+.adecco-icon-heart-outline:before {
+  content: "\44";
+}
+.adecco-icon-help:before {
+  content: "\45";
+}
+.adecco-icon-hospitality:before {
+  content: "\46";
+}
+.adecco-icon-industrial:before {
+  content: "\47";
+}
+.adecco-icon-infographic:before {
+  content: "\48";
+}
+.adecco-icon-information:before {
+  content: "\49";
+}
+.adecco-icon-instagram:before {
+  content: "\4a";
+}
+.adecco-icon-linkedin:before {
+  content: "\4b";
+}
+.adecco-icon-linkedin-1:before {
+  content: "\4c";
+}
+.adecco-icon-lock:before {
+  content: "\4d";
+}
+.adecco-icon-science:before {
+  content: "\4e";
+}
+.adecco-icon-profile-outline:before {
+  content: "\4f";
+}
+.adecco-icon-profile:before {
+  content: "\50";
+}
+.adecco-icon-pinterest:before {
+  content: "\51";
+}
+.adecco-icon-pin-outline:before {
+  content: "\52";
+}
+.adecco-icon-pin:before {
+  content: "\53";
+}
+.adecco-icon-office:before {
+  content: "\54";
+}
+.adecco-icon-continue:before {
+  content: "\55";
+}
+.adecco-icon-show-more:before {
+  content: "\56";
+}
+.adecco-icon-medicine:before {
+  content: "\57";
+}
+.adecco-icon-art:before {
+  content: "\58";
+}
+.adecco-icon-map:before {
+  content: "\59";
+}
+.adecco-icon-mail:before {
+  content: "\5a";
+}
+.adecco-icon-banking:before {
+  content: "\61";
+}
+.adecco-icon-add:before {
+  content: "\62";
+}
+.adecco-icon-contact:before {
+  content: "\63";
+}
+.adecco-icon-contact-outline:before {
+  content: "\64";
+}
+.adecco-icon-alarm:before {
+  content: "\65";
+}
+.adecco-icon-alarm-outline:before {
+  content: "\66";
+}
+.adecco-icon-article:before {
+  content: "\67";
+}
+.adecco-icon-work-experience:before {
+  content: "\68";
+}
+.adecco-icon-calendar:before {
+  content: "\69";
+}
+.adecco-icon-calendar-outline:before {
+  content: "\6a";
+}
+.adecco-icon-customer-service:before {
+  content: "\6b";
+}
+.adecco-icon-done:before {
+  content: "\6c";
+}
+.adecco-icon-location:before {
+  content: "\6d";
+}
+.adecco-icon-google-plus:before {
+  content: "\6e";
+}
+.adecco-icon-filter-outline:before {
+  content: "\6f";
+}
+.adecco-icon-filter:before {
+  content: "\70";
+}
+.adecco-icon-facebook:before {
+  content: "\71";
+}
+.adecco-icon-engineering:before {
+  content: "\72";
+}
+.adecco-icon-education:before {
+  content: "\73";
+}
+.adecco-icon-edit-outline:before {
+  content: "\74";
+}
+.adecco-icon-edit:before {
+  content: "\75";
+}
+.adecco-icon-download:before {
+  content: "\76";
+}
+.adecco-icon-down:before {
+  content: "\77";
+}
+.adecco-icon-document-outline:before {
+  content: "\78";
+}
+.adecco-icon-document:before {
+  content: "\79";
+}
+.adecco-icon-close:before {
+  content: "\7a";
+}
+.adecco-icon-retail:before {
+  content: "\e900";
+}
+.adecco-icon-recruitment-search:before {
+  content: "\e901";
+}
+.adecco-icon-overseas:before {
+  content: "\e902";
+}
+.adecco-icon-payroll:before {
+  content: "\e903";
+}
+.adecco-icon-payroll-outsourcing:before {
+  content: "\e904";
+}
+.adecco-icon-placement:before {
+  content: "\e905";
+}
+.adecco-icon-rpo:before {
+  content: "\e906";
+}
+.adecco-icon-contract:before {
+  content: "\e907";
+}
+.adecco-icon-youtube:before {
+  content: "\e908";
+}
+

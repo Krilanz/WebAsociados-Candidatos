@@ -127,7 +127,7 @@ if(isset($_GET['descargar']))
     </div>     
     
 </form> 
-        
+        <?php include_once('_footer.html');?>     
     </main>
     <!-- Essential javascripts for application to work-->
     <script src="js/jquery-3.2.1.min.js"></script>

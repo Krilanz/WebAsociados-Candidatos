@@ -6,8 +6,9 @@ if (!isset($_SESSION['userId'])) {
     exit;
 }
 
-$client_id = 'asociadoscandidatos';
-$client_secret = 'SrHDWvpDT2vLPIVgQ6axrkIOgYPr36hHqnnvow9uQCBUWCbz5330lP8k5pu6uNCr';
+$client_id = 'asociadoscandidatos-i5gbls';
+$client_secret = 'an1aMc59Oz9vCoS0WXT2JQtX3IC44IgQ3BN1aHtAdPSLzk8CJXxPFYnhqivbgNE5';
+
 
 require_once 'podio-php/PodioAPI.php';
 
@@ -69,9 +70,7 @@ if(isset($_GET['descargar']))
     
   </head>
   <body class="app sidebar-mini rtl">
-  <?php
-    include('_layout.html');
-   ?>
+  <?php include('_layout.html');?>
     <main class="app-content">
       <div class="app-title">
         <div>
@@ -119,8 +118,7 @@ if(isset($_GET['descargar']))
         </div>
       </div> 
           
-        
-        
+       <?php include_once('_footer.html');?>  
     </main>
     <!-- Essential javascripts for application to work-->
     <script src="js/jquery-3.2.1.min.js"></script>
@@ -163,6 +161,12 @@ if(isset($_GET['descargar']))
 
     <script type="text/javascript" src="js/plugins/select2.min.js"></script>
     
+    
+   
+    
   </body>
+  
+  
+ 
 </html>
 
