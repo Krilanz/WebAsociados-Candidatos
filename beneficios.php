@@ -136,9 +136,9 @@ if(isset($_GET['descargar']))
                   window.console.log(arLenghtPrint);</script>";
                 ?>
                     <div class="card shadow-base bd-0 mg-0 ">
-                       <!--  <figure class="card-item">
-                          <img class="img-fluid rounded-top" style="width: auto;height: 280px;"src="<?php /*echo $item->fields["imagen"] -> values[0]-> link; */?>" alt="Image">
-                        </figure>-->
+                        <figure class="card-item">
+                          <img class="img-fluid rounded-top" style="width: auto;height: 280px;"src="<?php echo $item->fields["imagen"] -> values[0]-> link; ?>" alt="Image">
+                        </figure>
                         <div class="card-body pd-25" id="imprimir<?php echo $count;?>">
                           <p class="tx-20 tx-uppercase tx-mont tx-semibold tx-info"><?php echo $item->fields["title"]-> values ?></p>
                           <h5 class="tx-normal tx-roboto lh-3 mg-b-15"><a href="" class="tx-inverse hover-info"> Descuento: <?php echo $item->fields["descuento-3"]-> values ?> </a></h5>
