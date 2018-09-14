@@ -6,8 +6,8 @@ if (!isset($_SESSION['userId'])) {
     exit;
 }
 
-$client_id = 'asociadoscandidatos-i5gbls';
-$client_secret = 'an1aMc59Oz9vCoS0WXT2JQtX3IC44IgQ3BN1aHtAdPSLzk8CJXxPFYnhqivbgNE5';
+$client_id = 'asociadoscandidatos';
+$client_secret = 'SrHDWvpDT2vLPIVgQ6axrkIOgYPr36hHqnnvow9uQCBUWCbz5330lP8k5pu6uNCr';
 
 require_once 'podio-php/PodioAPI.php';
 
@@ -25,38 +25,16 @@ if(isset($_POST['buscar']))
    //buscar beneficios por filtro
    $itemsBeneficios = PodioItem::filter($appBeneficios_id, [
         'filters' => [
-            'category' => intval($_POST['categoria'])
+            '170440172' => intval($_POST['categoria'])
         ]
     ]);
 
 }
-
-
-if(isset($_GET['descargar']))
-{
-    if($_GET['descargar'] > 0){
-        //Descargar documentación 
-        // Get the file object. Only necessary if you don't already have it!
-         $file = PodioFile::get($_GET['descargar']);
-
-         // Download the file. This might take a while...
-         //$file_content = $file->get_raw();
-
-         $file_content = Podio::get($file->link . '/medium', array(), array('file_download' => true))->body;
-         // Store the file on local disk
-         header("Content-Description: File Transfer"); 
-         header("Content-Type: application/octet-stream"); 
-         header("Content-Disposition: attachment; filename='" . $file -> name . "'"); 
-         file_put_contents("downloads/" . $file -> name, $file_content);
-
-         //readfile("downloads/" . $file -> name);
-         unlink("downloads/" . $file -> name);
-    }
-   
-}
-
-
+$printCount = 0;
 ?>
+<script>var arLenghtPrint = 0;
+
+window.console.log(arLenghtPrint);</script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -90,12 +68,12 @@ if(isset($_GET['descargar']))
         </h2>
           <form method="post">
             <div class="row" role="form">
-                <div class="form-group col-md-7">
+                <div class="form-group col-md-3">
                 <input id="txtPalabraClave" type="text" placeholder="Ingresá tu búsqueda" class="form-control">
                 </div>
-                <!-- <div class="form-group col-md-4">
+                <div class="form-group col-md-4">
                 <input id="txtDonde" type="text" placeholder="Región/Provincia/Localidad/Barrio" class="form-control ui-autocomplete-input" autocomplete="off">
-                </div>-->
+                </div>
                 <div class="form-group col-md-3">
                 <select class="form-control" id="selectCategoria" name="categoria"  placeholder="Categoría"style="padding-top: 7.5px !important;">
                             <option value="1">IDIOMAS</option>
@@ -122,16 +100,9 @@ if(isset($_GET['descargar']))
         <div class="card-deck card-deck-sm mg-x-0">
             <?php
                 $count = 0;
-                echo"<script>var arLenghtPrint = 0;
-                window.console.log(arLenghtPrint);</script>";
                 foreach ($itemsBeneficios as $item) {
                     $count++;
-                    
-                    $detalles = PodioItem::get_by_app_item_id( $appBeneficios_id , $item -> app_item_id) ;
-                    $fileId = 0;
-                    foreach ($detalles -> files as $detalle) {                           
-                        $fileId = $detalle -> file_id;
-                    }
+                    $printCount++;
                   echo"<script>arLenghtPrint++;
                   window.console.log(arLenghtPrint);</script>";
                 ?>
@@ -139,16 +110,15 @@ if(isset($_GET['descargar']))
                         <figure class="card-item">
                           <img class="img-fluid rounded-top" style="width: auto;height: 280px;"src="<?php echo $item->fields["imagen"] -> values[0]-> link; ?>" alt="Image">
                         </figure>
-                        <div class="card-body pd-25" id="imprimir<?php echo $count;?>">
+                        <div class="card-body pd-25" id="imprimir<?php echo $printCount;?>">
                           <p class="tx-20 tx-uppercase tx-mont tx-semibold tx-info"><?php echo $item->fields["title"]-> values ?></p>
                           <h5 class="tx-normal tx-roboto lh-3 mg-b-15"><a href="" class="tx-inverse hover-info"> Descuento: <?php echo $item->fields["descuento-3"]-> values ?> </a></h5>
                           <p class="tx-14 tx-gray-600 mg-b-25"> <?php echo $item->fields["descripcion"] == null ? "" : $item->fields["descripcion"] -> values ?> </p>
                           <p class="tx-10 tx-gray-600 mg-b-25"> Vigente desde el <?php echo $item->fields["vigencia"]-> values["start"] == null ? "" : $item->fields["vigencia"]-> values["start"] -> format('Y/m/d') ?> hasta el <?php echo $item->fields["vigencia"]-> values["end"] == null ? "" : $item->fields["vigencia"]-> values["end"] -> format('Y/m/d') ?> </p> <!---Item href "Bases" removida--->
-                          
+                          <p class="tx-15 mg-b-5">
+                            <button class="btn btn-primary printbtn" style="position: relative; left:0px; bottom:-10px;" ><i class="fa fa-fw fa-lg fa-exchange"></i>Imprimir</button>
+                          </p>
                         </div><!-- card-body -->
-                        <p style="padding-left:  20px;">
-                            <a class="btn btn-primary printbtn" href="beneficios.php?descargar=<?php echo $fileId ?>" style=" left: 20px; bottom: 20px;" ><i class="fa fa-fw fa-lg fa-exchange"></i>Imprimir</a>
-                        </p>
                       </div><!-- card -->
             <?php
                 if( $count == 3  ){
@@ -171,7 +141,7 @@ if(isset($_GET['descargar']))
         </div><!-- card-body -->
     </div><!-- card -->
 
-    <?php include_once('_footer.html');?>  
+
 
     </main>
     <!-- Essential javascripts for application to work-->
@@ -254,13 +224,15 @@ if(isset($_GET['descargar']))
     </script>
 
 <script>
+
     $(document).ready(function() {
+      var arlenghtPos;
         $('button.printbtn').click(function() {
           var pdf = new jsPDF('p', 'pt', 'letter');
-          var arlenghtPos = arLenghtPrint-4;
-          arlenghtPos = '#imprimir'+arlenghtPos.toString();
-          source = $('#imprimir4')[0];
-          window.console.log(source);
+
+          arlenghtPos=[$(this).parent().parent().attr('id')].toString();
+          window.console.log(arlenghtPos);
+          source = $('#'+arlenghtPos)[0];
 
           specialElementHandlers = {
               '#bypassme': function (element, renderer) {
@@ -273,6 +245,15 @@ if(isset($_GET['descargar']))
               left: 40,
               width: 522
           };
+          //comentando este bloque se imprime sin imagen
+          var img = new Image;
+          img.onload = function() {
+              pdf.addImage(this, 10, 10);
+              pdf.save("cupon.pdf");
+          };
+          img.crossOrigin = "";
+          img.src = "../WebAsociados-Candidatos/images/adeccologocup.jpg";
+          //bloque
 
           pdf.fromHTML(
               source,
@@ -283,18 +264,11 @@ if(isset($_GET['descargar']))
               },
 
               function (dispose) {
-                  pdf.save('Prueba.pdf');
+                  pdf.save('Cupon.pdf');
               }, margins
           );
         });
     });
 </script>
-
-
   </body>
-  
-  
-
 </html>
-
-
